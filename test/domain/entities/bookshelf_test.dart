@@ -23,7 +23,18 @@ void main() {
 
       //assert
       expect(
-          () => sut.addBook(Book()), throwsA(TypeMatcher<DomainException>()));
+          () => sut.addBook(Book()), throwsA(const TypeMatcher<DomainException>()));
+    });
+
+    test('addBook() should add book to the shelf', () {
+      // arrange
+      var book = Book();
+
+      //act
+      sut.addBook(book);
+
+      //assert
+      expect(sut.books.length, 1);
     });
   });
 }

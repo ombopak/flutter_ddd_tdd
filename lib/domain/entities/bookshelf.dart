@@ -3,7 +3,7 @@ import 'package:flutter_ddd_tdd/domain/entities/book.dart';
 import 'package:flutter_ddd_tdd/domain/value_object/identity.dart';
 
 class BookShelf {
-  static const MAX_CAPACITY = 10;
+  static const maxCapacity = 10;
   Identity id;
   late List<Book> _books;
 
@@ -15,8 +15,8 @@ class BookShelf {
   }
 
   addBook(Book book) {
-    if (_books.length == MAX_CAPACITY) {
-      throw DomainException('Book shelf has reached maximum capacity');
+    if (_books.length == maxCapacity) {
+      throw const DomainException('Book shelf has reached maximum capacity');
     } else {
       book.shelfId = id;
       _books.add(book);

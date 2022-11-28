@@ -1,6 +1,4 @@
-import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_ddd_tdd/domain/value_object/failure.dart';
 
 // class Identity extends Equatable {
 //   final String? id;
@@ -26,9 +24,9 @@ class Identity extends Equatable {
     return Identity._internal(id);
   }
 
-  Identity._internal(this.id);
+  const Identity._internal(this.id);
 
-  Identity(this.id);
+  const Identity(this.id);
 
   @override
   List<Object?> get props => [id];

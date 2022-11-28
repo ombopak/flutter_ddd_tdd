@@ -1,5 +1,5 @@
 class DomainException {
   final String message;
 
-  DomainException(this.message);
+  const DomainException(this.message);
 }

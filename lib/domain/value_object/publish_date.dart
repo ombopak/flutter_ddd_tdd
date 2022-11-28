@@ -13,7 +13,7 @@ class PublishDate extends Equatable {
     try {
       formatter.parseStrict(value);
     } catch (e) {
-      return Left(Failure('incorrect date format "yyyy-MM-dd"'));
+      return const Left(Failure('incorrect date format "yyyy-MM-dd"'));
     }
     return Right(PublishDate(value));
   }

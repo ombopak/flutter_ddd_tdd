@@ -9,13 +9,13 @@ void main(){
       var title = Title.create('').fold((err) => err, (title) => title);
 
       //assert
-      expect(title, TypeMatcher<Failure>());
+      expect(title, const TypeMatcher<Failure>());
     });
 
     test('should create title when value is not empty', () {
       //arrange
       var str = 'Programming Book';
-      var title = Title.create(str).getOrElse(() => Title(null),);
+      var title = Title.create(str).getOrElse(() => const Title(null),);
 
       //assert
       expect(title.value, str);

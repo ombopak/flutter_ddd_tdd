@@ -9,13 +9,13 @@ void main(){
       var author = Author.create('').fold((err) => err, (author) => author);
 
       //assert
-      expect(author, TypeMatcher<Failure>());
+      expect(author, const TypeMatcher<Failure>());
     });
 
     test('should create author when value is not empty', () {
       //arrange
       var str = 'John Thor';
-      var author = Author.create(str).getOrElse(() => Author(null));
+      var author = Author.create(str).getOrElse(() => const Author(null));
 
       //assert
       expect(author.value, str);

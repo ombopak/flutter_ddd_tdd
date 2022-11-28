@@ -9,7 +9,7 @@ class ISBN extends Equatable {
 
   static Either<Failure, ISBN> create(String value) {
     if (!_isValid(value)) {
-      return Left(Failure('invalid ISBN'));
+      return const Left(Failure('invalid ISBN'));
     } else {
       return Right(ISBN(value));
     }

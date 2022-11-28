@@ -8,13 +8,13 @@ void main() {
       //arrange
       var date = PublishDate.create('2019.07.21').fold((l) => l, (r) => r);
       //assert
-      expect(date, TypeMatcher<Failure>());
+      expect(date, const TypeMatcher<Failure>());
     });
 
     test('should set date when date is valid', () {
       //arrange
       var str = '2019-07-23';
-      var date = PublishDate.create(str).getOrElse(() => PublishDate(null));
+      var date = PublishDate.create(str).getOrElse(() => const PublishDate(null));
 
       //assert
       expect(date.toDate(), DateTime(2019, 07, 23));

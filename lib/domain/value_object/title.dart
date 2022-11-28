@@ -8,8 +8,8 @@ class Title extends Equatable {
   const Title(this.value);
 
   static Either<Failure, Title> create(String value) {
-    if (value == null || value.isEmpty) {
-      return Left(Failure('Title cannot be empty'));
+    if (value.isEmpty) {
+      return const Left(Failure('Title cannot be empty'));
     } else {
       return Right(Title(value));
     }

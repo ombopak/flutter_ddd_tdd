@@ -8,8 +8,8 @@ class Author extends Equatable {
   const Author(this.value);
 
   static Either<Failure, Author> create(String value) {
-    if (value == null || value.isEmpty) {
-      return Left(Failure('Author cannot be empty'));
+    if (value.isEmpty) {
+      return const Left(Failure('Author cannot be empty'));
     } else {
       return Right(Author(value));
     }
